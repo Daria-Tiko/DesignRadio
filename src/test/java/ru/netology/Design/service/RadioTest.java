@@ -73,7 +73,7 @@ public class RadioTest {
 
         int actual = station.getCurrentVolume();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @ParameterizedTest
@@ -88,7 +88,7 @@ public class RadioTest {
 
         int actual = station.getCurrentVolume();
 
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 }
