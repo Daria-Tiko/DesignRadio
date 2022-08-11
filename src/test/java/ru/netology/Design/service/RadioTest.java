@@ -1,6 +1,7 @@
 package ru.netology.Design.service;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,30 +10,38 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class RadioTest {
     Radio station = new Radio();
 
+    @Test
+    public void testRadioStation() {
+
+        Assertions.assertEquals(10, station.getAmountRadioStation());
+    }
+
+    @Test
+    public void amountRadioStation() {
+        Radio amountStation = new Radio(15);
+
+        Assertions.assertEquals(15, amountStation.getAmountRadioStation());
+    }
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/radioStation.csv")
-    public void shouldSetCurrentRadioStation(int newCurrentRadioStation, int expected) {
+    public void shouldSetCurrentRadioStation(int currentRadioStation, int expected) {
 
-        station.setCurrentRadioStation(newCurrentRadioStation);
+        station.setCurrentRadioStation(currentRadioStation);
 
-        int actual = station.getCurrentRadioStation();
-
-        Assertions.assertEquals(actual, expected);
+        Assertions.assertEquals(expected, station.getCurrentRadioStation());
     }
 
     @ParameterizedTest
     @CsvSource({
-            "3,4",
+            "0,1",
             "9,0",
-            "0,1"
+            "5,6"
     })
-    public void shouldSetNextRadioStation(int newCurrentRadioStation, int expected) {
+    public void shouldSetNextRadioStation(int currentRadioStation, int expected) {
 
-        station.nextStation(newCurrentRadioStation);
+        station.nextStation(currentRadioStation);
 
-        int actual = station.getCurrentRadioStation();
-
-        Assertions.assertEquals(actual, expected);
+        Assertions.assertEquals(expected, station.getCurrentRadioStation());
     }
 
     @ParameterizedTest
@@ -41,50 +50,44 @@ public class RadioTest {
             "5,4",
             "9,8"
     })
-    public void shouldSetPrevRadioStation(int newCurrentRadioStation, int expected) {
+    public void shouldSetPrevRadioStation(int currentRadioStation, int expected) {
 
-        station.prevStation(newCurrentRadioStation);
+        station.prevStation(currentRadioStation);
 
-        int actual = station.getCurrentRadioStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, station.getCurrentRadioStation());
     }
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/Volume.csv")
-    public void shouldSetCurrentVolume(int newCurrentVolume, int expected) {
+    public void shouldSetCurrentVolume(int currentVolume, int expected) {
 
-        station.setCurrentVolume(newCurrentVolume);
+        station.setCurrentVolume(currentVolume);
 
-        int actual = station.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, station.getCurrentVolume());
     }
 
     @ParameterizedTest
     @CsvSource({
-            "5,6",
-            "10,10",
-            "11,10"
+            "100,100",
+            "50,51",
+            "0,1"
     })
-    public void shouldSetVolumeUp(int newCurrentVolume, int expected) {
+    public void shouldSetVolumeUp(int currentVolume, int expected) {
 
-        station.volumeUp(newCurrentVolume);
+        station.volumeUp(currentVolume);
 
-        int actual = station.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, station.getCurrentVolume());
     }
 
     @ParameterizedTest
     @CsvSource({
-            "8,7",
-            "0,0",
-            "-1,0"
+            "100,99",
+            "50,49",
+            "0,0"
     })
-    public void shouldSetVolumeDown(int newCurrentVolume, int expected) {
+    public void shouldSetVolumeDown(int currentVolume, int expected) {
 
-        station.volumeDown(newCurrentVolume);
+        station.volumeDown(currentVolume);
 
         int actual = station.getCurrentVolume();
 
