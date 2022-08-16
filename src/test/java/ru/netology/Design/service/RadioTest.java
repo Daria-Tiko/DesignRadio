@@ -22,6 +22,7 @@ public class RadioTest {
 
         Assertions.assertEquals(15, amountStation.getAmountRadioStation());
     }
+
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/radioStation.csv")
     public void shouldSetCurrentRadioStation(int currentRadioStation, int expected) {
@@ -39,7 +40,8 @@ public class RadioTest {
     })
     public void shouldSetNextRadioStation(int currentRadioStation, int expected) {
 
-        station.nextStation(currentRadioStation);
+        station.setCurrentRadioStation(currentRadioStation);
+        station.nextStation();
 
         Assertions.assertEquals(expected, station.getCurrentRadioStation());
     }
@@ -52,7 +54,8 @@ public class RadioTest {
     })
     public void shouldSetPrevRadioStation(int currentRadioStation, int expected) {
 
-        station.prevStation(currentRadioStation);
+        station.setCurrentRadioStation(currentRadioStation);
+        station.prevStation();
 
         Assertions.assertEquals(expected, station.getCurrentRadioStation());
     }
@@ -74,7 +77,8 @@ public class RadioTest {
     })
     public void shouldSetVolumeUp(int currentVolume, int expected) {
 
-        station.volumeUp(currentVolume);
+        station.setCurrentVolume(currentVolume);
+        station.volumeUp();
 
         Assertions.assertEquals(expected, station.getCurrentVolume());
     }
@@ -87,7 +91,8 @@ public class RadioTest {
     })
     public void shouldSetVolumeDown(int currentVolume, int expected) {
 
-        station.volumeDown(currentVolume);
+        station.setCurrentVolume(currentVolume);
+        station.volumeDown();
 
         int actual = station.getCurrentVolume();
 

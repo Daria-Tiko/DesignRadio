@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/netology/Design/service/Radio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/netology/Design/service/Radio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/netology/Design/service/RadioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/netology/Design/service/RadioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Volume.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Volume.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,22 @@
       <command value="mvn clean verify" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RadioTest.amountRadioStation">
+  <component name="RunManager" selected="JUnit.RadioTest">
+    <configuration name="RadioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Design" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.netology.Design.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.netology.Design.service" />
+      <option name="MAIN_CLASS_NAME" value="ru.netology.Design.service.RadioTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RadioTest.AmountRadioStation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Design" />
       <extension name="coverage">
@@ -110,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RadioTest.shouldSetVolumeDown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RadioTest.shouldSetPrevRadioStation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Design" />
       <extension name="coverage">
         <pattern>
@@ -120,23 +134,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ru.netology.Design.service" />
       <option name="MAIN_CLASS_NAME" value="ru.netology.Design.service.RadioTest" />
-      <option name="METHOD_NAME" value="shouldSetVolumeDown(int,int)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RadioTest.shouldSetVolumeUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Design" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.netology.Design.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.netology.Design.service" />
-      <option name="MAIN_CLASS_NAME" value="ru.netology.Design.service.RadioTest" />
-      <option name="METHOD_NAME" value="shouldSetVolumeUp(int,int)" />
+      <option name="METHOD_NAME" value="shouldSetPrevRadioStation(int,int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RadioTest" />
+        <item itemvalue="JUnit.RadioTest.shouldSetPrevRadioStation" />
         <item itemvalue="JUnit.RadioTest.amountRadioStation" />
         <item itemvalue="JUnit.RadioTest.shouldSetCurrentRadioStation" />
         <item itemvalue="JUnit.RadioTest.AmountRadioStation" />
-        <item itemvalue="JUnit.RadioTest.shouldSetVolumeDown" />
-        <item itemvalue="JUnit.RadioTest.shouldSetVolumeUp" />
       </list>
     </recent_temporary>
   </component>
@@ -205,5 +203,16 @@
     <MESSAGE value="Add Radio" />
     <MESSAGE value="Add reformat code" />
     <option name="LAST_COMMIT_MESSAGE" value="Add reformat code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/netology/Design/service/RadioTest.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
