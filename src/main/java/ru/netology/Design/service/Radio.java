@@ -1,68 +1,69 @@
 package ru.netology.Design.service;
 
 
-    public class Radio {
-        private int currentRadioStation;
-        private int currentVolume;
+public class Radio {
+    private int currentRadioStation;
+    private int currentVolume;
 
-        public int getCurrentRadioStation() {
-            return currentRadioStation;
-        }
-        public int getCurrentVolume() {
-            return currentVolume;
-        }
+    public int getCurrentRadioStation() {
+        return currentRadioStation;
+    }
 
-        public void setCurrentRadioStation(int newCurrentRadioStation) {
-            if (newCurrentRadioStation < 0) {
-                return;
-            }
-            if (newCurrentRadioStation > 9) {
-                return;
-            }
-            currentRadioStation = newCurrentRadioStation;
-        }
-        public int nextStation(int newCurrentRadioStation) {
-            if (newCurrentRadioStation < 9) {
-                currentRadioStation = newCurrentRadioStation + 1;
-            }
-            if (newCurrentRadioStation >= 9) {
-                currentRadioStation = 0;
-            }
-            return currentRadioStation;
-        }
-        public int prevStation(int newCurrentRadioStation) {
-            if (newCurrentRadioStation > 0) {
-                currentRadioStation = newCurrentRadioStation - 1;
-            }
-            if (newCurrentRadioStation <= 0) {
-                currentRadioStation = 9;
-            }
-            return currentRadioStation;
-        }
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
 
-        public void setCurrentVolume(int newCurrentVolume) {
-            if (newCurrentVolume >= 0 & newCurrentVolume <= 10) {
-                currentVolume = newCurrentVolume;
-            }
+    public void setCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation < 0) {
+            return;
         }
-        public int volumeUp(int newCurrentVolume) {
-            if (newCurrentVolume < 10) {
-                currentVolume = newCurrentVolume + 1;
-            }
-            if (newCurrentVolume >= 10) {
-                currentVolume = 10;
-            }
-            return currentVolume;
+        if (newCurrentRadioStation > 9) {
+            return;
         }
-        public int volumeDown(int newCurrentVolume) {
-            if (newCurrentVolume > 0) {
-                currentVolume = newCurrentVolume -1;
-            }
-            if (newCurrentVolume <= 0) {
-                currentVolume = 0;
-            }
-            return currentVolume;
-        }
+        currentRadioStation = newCurrentRadioStation;
+    }
 
+    public void nextStation() {
+        if (currentRadioStation >= 9) {
+            currentRadioStation = 0;
+        } else {
+            currentRadioStation = currentRadioStation + 1;
+        }
 
     }
+
+    public void prevStation() {
+        if (currentRadioStation <= 0) {
+            currentRadioStation = 9;
+        } else {
+            currentRadioStation = currentRadioStation - 1;
+        }
+
+    }
+
+    public void setCurrentVolume(int newCurrentVolume) {
+        if (newCurrentVolume < 0) {
+            return;
+        }
+        if (newCurrentVolume > 10) {
+            return;
+        }
+        currentVolume = newCurrentVolume;
+
+    }
+
+    public void volumeUp() {
+        if (currentVolume < 10) {
+            currentVolume = currentVolume + 1;
+        }
+
+    }
+
+    public void volumeDown() {
+        if (currentVolume > 0) {
+            currentVolume = currentVolume - 1;
+        }
+    }
+
+
+}

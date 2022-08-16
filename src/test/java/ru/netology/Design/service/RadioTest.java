@@ -11,9 +11,9 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/radioStation.csv")
-    public void shouldSetCurrentRadioStation(int newCurrentRadioStation, int expected) {
+    public void shouldSetCurrentRadioStation(int currentRadioStation, int expected) {
 
-        station.setCurrentRadioStation(newCurrentRadioStation);
+        station.setCurrentRadioStation(currentRadioStation);
 
         int actual = station.getCurrentRadioStation();
 
@@ -26,9 +26,11 @@ public class RadioTest {
             "9,0",
             "0,1"
     })
-    public void shouldSetNextRadioStation(int newCurrentRadioStation, int expected) {
+    public void shouldSetNextRadioStation(int currentRadioStation, int expected) {
 
-        station.nextStation(newCurrentRadioStation);
+        station.setCurrentRadioStation(currentRadioStation);
+        station.nextStation();
+
 
         int actual = station.getCurrentRadioStation();
 
@@ -41,9 +43,9 @@ public class RadioTest {
             "5,4",
             "9,8"
     })
-    public void shouldSetPrevRadioStation(int newCurrentRadioStation, int expected) {
-
-        station.prevStation(newCurrentRadioStation);
+    public void shouldSetPrevRadioStation(int currentRadioStation, int expected) {
+        station.setCurrentRadioStation(currentRadioStation);
+        station.prevStation();
 
         int actual = station.getCurrentRadioStation();
 
@@ -52,9 +54,9 @@ public class RadioTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/Volume.csv")
-    public void shouldSetCurrentVolume(int newCurrentVolume, int expected) {
+    public void shouldSetCurrentVolume(int currentVolume, int expected) {
 
-        station.setCurrentVolume(newCurrentVolume);
+        station.setCurrentVolume(currentVolume);
 
         int actual = station.getCurrentVolume();
 
@@ -65,11 +67,11 @@ public class RadioTest {
     @CsvSource({
             "5,6",
             "10,10",
-            "11,10"
+            "11,1"
     })
-    public void shouldSetVolumeUp(int newCurrentVolume, int expected) {
-
-        station.volumeUp(newCurrentVolume);
+    public void shouldSetVolumeUp(int currentVolume, int expected) {
+        station.setCurrentVolume(currentVolume);
+        station.volumeUp();
 
         int actual = station.getCurrentVolume();
 
@@ -82,9 +84,9 @@ public class RadioTest {
             "0,0",
             "-1,0"
     })
-    public void shouldSetVolumeDown(int newCurrentVolume, int expected) {
-
-        station.volumeDown(newCurrentVolume);
+    public void shouldSetVolumeDown(int currentVolume, int expected) {
+        station.setCurrentVolume(currentVolume);
+        station.volumeDown();
 
         int actual = station.getCurrentVolume();
 
